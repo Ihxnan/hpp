@@ -69,7 +69,21 @@ sudo ./scripts/setup.py
 ### rd
 #### 使用
 ```c++
+#include <iostream>
 #include <rd>
+
+using namespace std;
+
+int main()
+{
+    for (int i = 0; i < 10; ++i)
+        cout << rd() << ' ';
+    cout << endl;
+    set_rd(10);
+    for (int i = 0; i < 10; ++i)
+        cout << rd() << ' ';
+    return 0;
+}
 ```
 
 - void set_rd(int x) 设置随机数的范围(不设置默认1e5)
@@ -78,7 +92,31 @@ sudo ./scripts/setup.py
 ### time
 #### 使用
 ```c++
+#include <cmath>
+#include <iostream>
 #include <time>
+
+using namespace std;
+
+void func1(int n)
+{
+    for (int i = 0; i < n; ++i)
+        pow(i, i);
+}
+
+void func2(int n, int step)
+{
+    for (int i = 0; i < n; i += step)
+        pow(i, i);
+}
+
+int main()
+{
+    int n = 1e9;
+    cout << timeTaken(func1, n) << endl;
+    cout << timeTaken(func2, n, 2) << endl;
+    return 0;
+}
 ```
 
 - double timeTaken(Func&& func, Args&&... args) 返回函数func执行时间
