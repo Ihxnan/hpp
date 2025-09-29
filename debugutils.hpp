@@ -1,0 +1,66 @@
+#include <iostream>
+#include <map>
+#include <unordered_map>
+#include <vector>
+
+#define x first
+#define y second
+#define all(v) v.begin(), v.end()
+#define endl '\n'
+
+using ll = long long;
+using ull = unsigned long long;
+using vi = std::vector<int>;
+using vvi = std::vector<vi>;
+using vl = std::vector<ll>;
+using vvl = std::vector<vl>;
+using pii = std::pair<int, int>;
+using pll = std::pair<ll, ll>;
+using psi = std::pair<std::string, int>;
+
+const int iINF = 0x3f3f3f3f;
+const ll lINF = 0x3f3f3f3f3f3f3f3f;
+const int mod = 998244353;
+const ll MOD = 1000000007;
+
+ll gcd(ll a, ll b)
+{
+    return b ? gcd(b, a % b) : a;
+}
+
+template <class T, class... Rest> void print(const T &x, const Rest &...rest);
+
+void print()
+{
+    std::cout << endl;
+}
+
+template <class T> void _print(const T &x)
+{
+    std::cout << x << ' ';
+}
+
+template <class T> void _print(const std::vector<T> &v)
+{
+    for (auto &p : v)
+        _print(p);
+    print();
+}
+
+template <class T, class S> void _print(const std::map<T, S> &mp)
+{
+    for (auto &p : mp)
+        print(p.x, p.y);
+}
+
+template <class T, class S> void _print(const std::unordered_map<T, S> &mp)
+{
+    for (auto &p : mp)
+        print(p.x, p.y);
+}
+
+template <class T, class... Rest> void print(const T &x, const Rest &...rest)
+{
+    _print(x);
+    print(rest...);
+}

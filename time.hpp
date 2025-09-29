@@ -1,0 +1,19 @@
+#include <iostream>
+#include <chrono>
+
+// 统计函数执行时间的模板函数
+template<typename Func, typename... Args>
+double timeTaken(Func&& func, Args&&... args) {
+    // 记录开始时间
+    auto start = std::chrono::high_resolution_clock::now();
+    
+    // 执行目标函数
+    std::forward<Func>(func)(std::forward<Args>(args)...);
+    
+    // 记录结束时间
+    auto end = std::chrono::high_resolution_clock::now();
+    
+    // 计算时间差（以秒为单位）
+    std::chrono::duration<double> duration = end - start;
+    return duration.count();
+}
