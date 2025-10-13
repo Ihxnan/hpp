@@ -1,3 +1,6 @@
+#ifndef IHXNAN_DEBUG
+#define IHXNAN_DEBUG
+
 #include <iostream>
 #include <map>
 #include <unordered_map>
@@ -64,3 +67,5 @@ template <class T, class... Rest> void print(const T &x, const Rest &...rest)
     _print(x);
     print(rest...);
 }
+
+#endif // !IHXNAN_DEBUG

@@ -1,3 +1,6 @@
+#ifndef IHXNAN_RD
+#define IHXNAN_RD
+
 #include <random>
 
 std::random_device g_rand;
@@ -15,3 +18,5 @@ inline int rd()
 {
     return dis(gen);
 }
+
+#endif // !IHXNAN_RD
