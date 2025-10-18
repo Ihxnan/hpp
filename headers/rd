@@ -7,15 +7,37 @@ std::random_device g_rand;
 
 std::mt19937 gen(g_rand());
 
-std::uniform_int_distribution<> dis(1, 100000);
+std::uniform_int_distribution<> def(1, 100000);
 
-inline void set_rd(int x)
+inline void set_rd()
 {
-    dis = std::uniform_int_distribution<>(1, x);
+    def = std::uniform_int_distribution<>(1, 100000);
+}
+
+inline void set_rd(int r)
+{
+    def = std::uniform_int_distribution<>(1, r);
+}
+
+inline void set_rd(int l, int r)
+{
+    def = std::uniform_int_distribution<>(l, r);
 }
 
 inline int rd()
 {
+    return def(gen);
+}
+
+inline int rd(int r)
+{
+    std::uniform_int_distribution<> dis(1, r);
+    return dis(gen);
+}
+
+inline int rd(int l, int r)
+{
+    std::uniform_int_distribution<> dis(l, r);
     return dis(gen);
 }
 

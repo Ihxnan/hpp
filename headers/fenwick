@@ -24,7 +24,7 @@ template <class T> class Fenwick
             tree[pos] += val;
     }
 
-    T sum(int pos) const
+    T sum(int pos)
     {
         T ans = 0;
         for (; pos > 0; pos -= lowbit(pos))
@@ -32,7 +32,7 @@ template <class T> class Fenwick
         return ans;
     }
 
-    T querry(int left, int right) const
+    T query(int left, int right)
     {
         return sum(right) - sum(left - 1); 
     }
