@@ -7,6 +7,7 @@
 #include <iomanip>
 #include <iostream>
 #include <map>
+#include <numeric>
 #include <queue>
 #include <set>
 #include <unordered_map>
@@ -19,6 +20,12 @@
 #define out2(x, y) cout << #x << " = " << (x) << ", " << #y << " = " << (y) << endl
 #define out3(x, y, z) cout << #x << " = " << (x) << ", " << #y << " = " << (y) << ", " << #z << " = " << (z) << endl
 #define lowbit(x) ((x) & -(x))
+#define yn(ans) printf("%s\n", (ans) ? "Yes" : "No")
+#define YN(ans) printf("%s\n", (ans) ? "YES" : "NO")
+#define pb push_back
+#define qb pop_back
+#define pf push_front
+#define qf pop_front
 #define no do { cout << "No" << endl; return; } while(0)
 #define yes do { cout << "Yes" << endl; return; } while (0)
 #define endl '\n'
