@@ -28,7 +28,6 @@
 #define qf pop_front
 #define no do { cout << "No" << endl; return; } while(0)
 #define yes do { cout << "Yes" << endl; return; } while (0)
-#define endl '\n'
 
 using namespace std;
 using ll = long long;
